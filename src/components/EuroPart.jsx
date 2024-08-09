@@ -9,16 +9,16 @@ const EuroPart = () => {
       <div className="flex items-center justify-start mt-8 gap-8 flex-col lg:flex-row px-4">
         <div className="flex-1">
           <div className="bg-white py-2">
-            <p className="flex items-center gap-2 px-3 text-[#1A202C] text-[14px]">
+            <p className="flex items-center gap-1 px-3 text-[#1A202C] text-[14px]">
               <span className="text-[#3563E9]">
-                <IoEllipse />
+                <IoEllipse className='border-2 border-gray-300 rounded-full' />
               </span>
               Pick-up
             </p>
             <div className="flex items-center">
               <div className="border-r-2 border-r-gray-100 px-3">
                 <p className="text-[#1A202C] text-[14px]">Locations</p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <span className="text-[10px] text-[#90A3BF]">
                     <p>select your city</p>
                   </span>
@@ -27,7 +27,7 @@ const EuroPart = () => {
               </div>
               <div className="border-r-2 border-r-gray-100 px-3">
                 <p className="text-[#1A202C] text-[14px]">Date</p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <span className="text-[10px] text-[#90A3BF]">
                     <p>select your date</p>
                   </span>
@@ -36,7 +36,7 @@ const EuroPart = () => {
               </div>
               <div className="px-3">
                 <p className="text-[#1A202C] text-[14px]">Time</p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <span className="text-[10px] text-[#90A3BF]">
                     <p>select your time</p>
                   </span>
@@ -46,23 +46,23 @@ const EuroPart = () => {
             </div>
           </div>
         </div>
-        <div className="bg-[#3563E9] px-3 py-3 rounded-[10px]">
+        <div className="bg-[#3563E9] p-3 rounded-[10px]">
           <button>
             <IoSwapVertical className="text-white" />
           </button>
         </div>
         <div className="flex-1">
           <div className="bg-white py-2">
-            <p className="flex items-center gap-4 px-3 text-[#1A202C] text-[14px]">
+            <p className="flex items-center gap-1 px-3 text-[#1A202C] text-[14px]">
               <span className="text-[#3563E9]">
-                <IoEllipse />
+                <IoEllipse className='border-2 border-gray-300 rounded-full' />
               </span>
               Drop-off
             </p>
             <div className="flex items-center">
               <div className="border-r-2 border-r-gray-100 px-3">
                 <p className="text-[#1A202C] text-[14px]">Locations</p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <span className="text-[10px] text-[#90A3BF]">
                     <p>select your city</p>
                   </span>
@@ -71,7 +71,7 @@ const EuroPart = () => {
               </div>
               <div className="border-r-2 border-r-gray-100 px-3">
                 <p className="text-[#1A202C] text-[14px]">Date</p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <span className="text-[10px] text-[#90A3BF]">
                     <p>select your date</p>
                   </span>
@@ -80,7 +80,7 @@ const EuroPart = () => {
               </div>
               <div className="px-3">
                 <p className="text-[#1A202C] text-[14px]">Time</p>
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-6">
                   <span className="text-[10px] text-[#90A3BF]">
                     <p>select your time</p>
                   </span>

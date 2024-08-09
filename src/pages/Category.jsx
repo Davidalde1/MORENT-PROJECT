@@ -11,14 +11,14 @@ import EuroPart from "../components/EuroPart";
 const Category = () => {
   return (
     <div className="flex gap-2 min-h-screen">
-      <div className="bg-[#ffffff] mt-1 w-1/6">
+      <div className="bg-[#ffffff] mt-1 w-1/6 hidden md:hidden lg:block">
         <SideBar/>
       </div>
-      <div className="w-5/6">
-        <div className="px-[18px]">
+      <div className="lg:w-5/6 w-full">
+        <div className="px-[2px]">
           <EuroPart/>
         </div>
-        <div className="flex justify-center mt-6 gap-2 flex-wrap">
+        <div className="flex justify-center mt-6 gap-2 flex-wrap overflow-y-auto px-5 lg:px-0">
           <Card
             label="Koenigsegg"
             heart={<FaHeart />}
@@ -76,7 +76,7 @@ const Category = () => {
             amount="$80.00/"
           />
         </div>
-        <div className="flex justify-center mt-6 flex-wrap gap-2">
+        <div className="flex justify-center mt-6 flex-wrap gap-2 px-5 lg:px-0">
           <Card
             label="Koenigsegg"
             heart={<FaHeart />}
@@ -134,7 +134,7 @@ const Category = () => {
             amount="$99.00/"
           />
         </div>
-        <div className="flex justify-center mt-6 flex-wrap gap-2">
+        <div className="flex justify-center mt-6 flex-wrap gap-2 px-5 lg:px-0">
           <Card
             label="Koenigsegg"
             heart={<FaHeart />}
@@ -194,7 +194,7 @@ const Category = () => {
         </div>
         <div className="flex items-center justify-center">
           <a href="/category">
-            <Button btnText="Show more car" className="mt-8 text-[12px] px-6" />
+            <Button btnText="Show more car" className="mt-8 text-[12px] px-6"/>
           </a>
         </div>
       </div>

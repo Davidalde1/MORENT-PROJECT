@@ -7,11 +7,10 @@ import { FaHeart } from "react-icons/fa";
 import Button from "../ReusableComponents/Button";
 import EuroPart from "../components/EuroPart";
 
-
 const Home = () => {
   return (
-    <div className="w-[70%] mx-auto font-plus mt-4">
-      <div className="flex items-center gap-10 px-10 lg:px-4 flex-col lg:flex-row">
+    <div className="w-[80%] mx-auto font-plus mt-4">
+       <div className="flex items-center gap-10 px-10 lg:px-4 flex-col lg:flex-row">
         <div className="w-[300px] md:w-[400px] lg:w-[600px] h-[250px] bg-[#54A6FF] rounded-[10px] px-3">
           <h2 className="text-[24px] text-white w-[220px]">
             The Best Platform for Car Rental
@@ -44,9 +43,9 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <EuroPart/>
+        <EuroPart />
       </div>
-      <div className="flex items-center justify-between mt-6 px-8 lg:px-6">
+      <div className="flex items-center justify-between mt-6 px-8 lg:px-4 md:px-32">
         <div className="text-[12px] text-[#90A3BF]">
           <p>Popular car</p>
         </div>
@@ -112,7 +111,7 @@ const Home = () => {
           amount="$80.00/"
         />
       </div>
-      <div className="mt-6 px-8 lg:px-6">
+      <div className="mt-6 px-8 lg:px-4 md:px-32">
         <p className="text-[12px] text-[#90A3BF]">Recomendation car car</p>
       </div>
       <div className="flex justify-center mt-6 flex-wrap gap-2">

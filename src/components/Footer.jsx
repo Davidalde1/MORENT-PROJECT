@@ -13,7 +13,7 @@ const Footer = () => {
             business.
           </p>
         </div>
-        <div className="flex items-start justify-evenly gap-4 lg:gap-10 lg:px-20 py-3">
+        <div className="flex items-start justify-evenly md:justify-start gap-4 lg:gap-10 lg:px-20 py-3">
           <div className="flex flex-col">
             <h2 className="text-[14px] lg:text-[16px] text-[#1A202C] font-semibold">
               About

@@ -14,9 +14,10 @@ const Card = ({
   userIcon,
   userName,
   amount,
+  btnText,
 }) => {
   return (
-    <div className="w-[200px] h-[240px] m-auto px-3 py-3 bg-white font-plus">
+    <div className="w-full md:w-[400px] lg:w-[240px] h-[260px] m-auto px-3 py-3 bg-white font-plus">
       <div className="flex justify-between items-center text-[12px]">
         <span className="text-[#1A202C] text-[14px] font-bold">{label}</span>
         <span className="text-red-700">{heart}</span>
