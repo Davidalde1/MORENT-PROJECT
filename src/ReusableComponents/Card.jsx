@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../ReusableComponents/Button";
+import { Link } from "react-router-dom";
 
 const Card = ({
   label,
@@ -14,7 +15,6 @@ const Card = ({
   userIcon,
   userName,
   amount,
-  btnText,
 }) => {
   return (
     <div className="w-full md:w-[400px] lg:w-[240px] h-[260px] m-auto px-3 py-3 bg-white font-plus">
@@ -50,9 +50,9 @@ const Card = ({
           </p>
         </div>
         <div>
-          <a href="/details">
+          <Link to="/details">
             <Button btnText="Rent Now" className="text-[10px]" />
-          </a>
+          </Link>
         </div>
       </div>
     </div>

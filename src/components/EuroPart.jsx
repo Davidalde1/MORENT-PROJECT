@@ -6,7 +6,7 @@ import { IoSwapVertical } from "react-icons/io5";
 const EuroPart = () => {
   return (
     <div className="font-plus">
-      <div className="flex items-center justify-start mt-8 gap-8 flex-col lg:flex-row px-4">
+      <div className="flex items-center justify-start mt-8 gap-8 flex-col lg:flex-row px-3">
         <div className="flex-1">
           <div className="bg-white py-2">
             <p className="flex items-center gap-1 px-3 text-[#1A202C] text-[14px]">
