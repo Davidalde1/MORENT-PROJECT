@@ -2,11 +2,11 @@ import React from "react";
 import SideBar from "../ReusableComponents/SideBar";
 import { IoIosStar } from "react-icons/io";
 import Button from "../ReusableComponents/Button";
-import Card from "../ReusableComponents/Card";
-import { FaHeart } from "react-icons/fa";
-import { MdLocalGasStation } from "react-icons/md";
-import { TbSteeringWheel } from "react-icons/tb";
-import { FaUserFriends } from "react-icons/fa";
+// import Card from "../ReusableComponents/Card";
+// // import { FaHeart } from "react-icons/fa";
+// import { MdLocalGasStation } from "react-icons/md";
+// import { TbSteeringWheel } from "react-icons/tb";
+// import { FaUserFriends } from "react-icons/fa";
 import { RiArrowDropDownLine } from "react-icons/ri";
 
 const Details = () => {
@@ -208,7 +208,7 @@ const Details = () => {
             <p>View All</p>
           </div>
         </div>
-        <div className="flex justify-center mt-6 gap-2 flex-wrap overflow-y-auto">
+        {/* <div className="flex justify-center mt-6 gap-2 flex-wrap overflow-y-auto">
           <Card
             label="Koenigsegg"
             heart={<FaHeart />}
@@ -323,7 +323,7 @@ const Details = () => {
             userName="People"
             amount="$99.00/"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
