@@ -38,7 +38,7 @@ const Home = () => {
             />
           </div> */}
           <div className="flex items-center gap-10 px-10 lg:px-4 flex-col lg:flex-row">
-        <div className="w-[300px] md:w-[400px] lg:w-[620px] h-[250px] bg-[#54A6FF] rounded-[10px] px-3">
+        <div className="w-[300px] md:w-[400px] lg:w-[100%] h-[280px] bg-[#54A6FF] rounded-[10px] px-3">
           <h2 className="text-[24px] text-white w-[220px]">
             The Best Platform for Car Rental
           </h2>
@@ -50,10 +50,10 @@ const Home = () => {
           <img 
           src="/carrental1.png" 
           alt="moving car" 
-          className="w-[270px] h-[75px] mx-auto"
+          className="w-[300px] h-[90px] mx-auto"
           />
         </div>
-        <div className="w-[300px] md:w-[400px] lg:w-[600px] h-[250px] bg-[#3563E9] rounded-[10px] px-3">
+        <div className="w-[300px] md:w-[400px] lg:w-[100%] h-[280px] bg-[#3563E9] rounded-[10px] px-3">
           <h2 className="text-[24px] text-[white] w-[220px]">
             Easy way to rent a car at a low price
           </h2>
@@ -65,20 +65,20 @@ const Home = () => {
           <img
             src="/carrental2.png"
             alt="moving car"
-            className="w-[270px] h-[75px] mx-auto"
+            className="w-[300px] h-[90px] mx-auto"
           />
         </div>
       </div>
-          <div className="lg:w-[100%] w-[90%] mt-[4rem]">
+          <div className="lg:w-[100%] w-[90%] mt-[4rem] px-4">
             <EuroPart/>
           </div>
           {/* view_all */}
-          <div className="flex items-center justify-between mt-[2rem]">
+          <div className="flex items-center justify-between mt-[2rem] px-4">
             <span className="font-medium text-[16px]">Popular Car</span>
             <Button btnText="View All" className="text-[#3563E9] cursor-pointer bg-[#f6f7f9]" />
           </div>
-          <div className="flex items-center flex-col justify-between">
-            <CarContainer/>
+          <div className="flex items-center flex-col justify-between px-4">
+            <CarContainer showAll={true}/>
           </div>
         </div>
 

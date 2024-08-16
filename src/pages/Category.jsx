@@ -16,8 +16,8 @@ const Category = () => {
         <div className="w-full">
           <EuroPart/>
         </div>
-        <div className="flex items-center flex-col justify-between">
-            <CarContainer/>
+        <div className="flex flex-wrap items-center flex-col justify-between">
+            <CarContainer showAll={true}/>
           </div>
         <div className="flex items-center justify-center">
             <Button 

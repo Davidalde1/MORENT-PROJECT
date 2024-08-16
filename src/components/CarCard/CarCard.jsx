@@ -8,12 +8,14 @@ import { BsPeopleFill } from "react-icons/bs";
 import Button from "../../ReusableComponents/Button";
 import { useNavigate } from "react-router-dom";
 
+
 const CarCard = ({ car }) => {
     const navigate = useNavigate();
 
   const goToDetails = () => {
-    navigate("/details");
+   navigate(`/details/${car.id}`);
   };
+
   const [liked, setLiked] = useState(false);
 
   useEffect(() => {
@@ -41,7 +43,7 @@ const CarCard = ({ car }) => {
   }
 
   return (
-    <div className="lg:w-[270px] w-[100vh] h-[334px] bg-white px-[28px] py-[20px] flex flex-col justify-between rounded-[8px]">
+    <div className="lg:w-[250px] w-[270px] h-[334px] bg-white px-[28px] py-[20px] flex flex-col justify-between rounded-[8px]" onClick={goToDetails}>
       <div className="flex  justify-between">
         <div>
           <h3 className="text-[18px] font-bold p-0 m-0">{car.carName}</h3>
@@ -83,7 +85,7 @@ const CarCard = ({ car }) => {
         </p>
         <Button 
         btnText="Rent Now" 
-        className="bg-blue-700 text-white" 
+        className="bg-blue-700 text-white text-[12px]" 
         func={goToDetails}
         />
       </div>

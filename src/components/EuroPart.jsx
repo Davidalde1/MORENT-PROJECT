@@ -5,9 +5,9 @@ import { MdMyLocation } from "react-icons/md";
 
 const EuroPart = () => {
   return (
-    <div className="w-[100%] flex gap-[2rem] items-center justify-center z-[500px]">
+    <div className="w-[100%] flex gap-[1rem] lg:gap-[2rem] items-center justify-center z-[500px]">
       {/* Pickup */}
-      <div className="w-[100%] bg-white rounded-[10px] px-[30px] py-[10px] flex flex-col items-start justify-center">
+      <div className="w-[100%] bg-white rounded-[10px] lg:px-[30px] px-[10px] py-[10px] flex flex-col items-start justify-center">
         <div className="flex items-center justify-center mb-[18px] gap-6">
           <MdMyLocation className="text-blue-700 text-[18px]" />
           <span>Pick-up</span>
@@ -39,7 +39,7 @@ const EuroPart = () => {
         <HiOutlineSwitchVertical className="w-[30px] h-[30px] text-white" />
       </div>
       {/* dropoff */}
-      <div className="w-[100%] bg-white rounded-[10px] px-[30px] py-[10px] flex flex-col justify-center items-start">
+      <div className="w-[100%] bg-white rounded-[10px] lg:px-[30px] px-[10px] py-[10px] flex flex-col justify-center items-start">
         <div className="flex items-center justify-center mb-[18px] gap-[6px]">
           <MdMyLocation className="text-[18px] text-blue-600" />
           <span>Drop-off</span>

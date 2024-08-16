@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <div className="py-4 bg-white sticky left-0 top-0">
-      <nav className="flex items-center justify-between gap-2 lg:gap-4 px-[10px] lg:px-[3rem] md:px-[3rem]">
+      <nav className="flex items-center justify-between gap-2 lg:gap-4 px-[20px] lg:px-[3rem] md:px-[3rem]">
         <div className="flex items-center gap-4 lg:gap-10">
           <a href="/"><span className="text-[#3563E9] text-[20px] lg:text-[32px]">MORENT</span></a>
           <Search/>
