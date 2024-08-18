@@ -13,7 +13,7 @@ const CarCard = ({ car }) => {
     const navigate = useNavigate();
 
   const goToDetails = () => {
-   navigate(`/details/${car.id}`);
+   navigate(`/details/${car.id}`,{state:{car}});
   };
 
   const [liked, setLiked] = useState(false);
@@ -43,7 +43,7 @@ const CarCard = ({ car }) => {
   }
 
   return (
-    <div className="lg:w-[250px] w-[270px] h-[334px] bg-white px-[28px] py-[20px] flex flex-col justify-between rounded-[8px]" onClick={goToDetails}>
+    <div className="lg:w-[250px] w-[270px] h-[334px] bg-white px-[28px] py-[20px] flex flex-col justify-between rounded-[8px] hover:bg-slate-200">
       <div className="flex  justify-between">
         <div>
           <h3 className="text-[18px] font-bold p-0 m-0">{car.carName}</h3>

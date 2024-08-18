@@ -48,8 +48,8 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <div className="flex lg:hidden cursor-pointer" onClick={toggleSidebar}>
-          <FiMenu className="size-8"/>
+        <div className="flex lg:hidden cursor-pointer bg-blue-600 rounded-[4px]" onClick={toggleSidebar}>
+          <FiMenu className="size-8 text-white"/>
         </div>
       </nav>
       {showSidebar && (

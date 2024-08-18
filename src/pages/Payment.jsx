@@ -6,6 +6,7 @@ import Summary from '../components/Summary';
 
 
 const Payment = () => {
+
   return (
     <div className='lg:flex md:flex-row flex-row gap-6 mt-4 w-[87%] mx-auto font-plus'>
       <div className='w-full md:w-full lg:w-3/5'>
@@ -58,7 +59,7 @@ const Payment = () => {
           <Confirmation/>
         </div>
       </div>
-      <div className='lg:w-2/5 md:w-full w-full'>
+      <div className='lg:w-2/5 md:w-full w-full mt-3 lg:mt-0'>
       <Summary/>
       </div>
     </div>

@@ -7,30 +7,32 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { useParams } from "react-router-dom";
 import {useCars} from "../components/Context/CarContext"
 import { IoMdHeart } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 
 
 const Details = () => {
-  const {id} = useParams();
-  const {cars} = useCars();
-  const car = cars.find((car) => car.id === parseInt(id));
+  const location = useLocation();
+  const { car } = location.state;
+  // const {id} = useParams();
+  // const {cars} = useCars();
+  // const car = cars.find((car) => car.id === parseInt(id));
   if (!car) {
     return <div>Car not found</div>
   }
 
   const navigate = useNavigate();
   const goToPayment = () => {
-    navigate("/payment");
+    navigate("/payment",{ state: { car } });
   };
   return (
-    <div className="flex gap-8 min-h-screen font-plus">
+    <div className="flex gap-8 min-h-screen font-plus lg:w-full">
       <div className="bg-[#ffffff] mt-1 w-1/6 hidden md:hidden lg:block">
         <SideBar />
       </div>
       <div className="w-5/6 m-auto lg:m-0">
-        <div className="flex lg:flex-row flex-col mt-4 gap-10 px-6">
+        <div className="flex lg:flex-row flex-col mt-4 gap-10 px-4">
           <div>
             <div className="w-full md:w-[500px] lg:w-[550px] h-[280px] bg-[#3563E9] md:m-auto rounded-[10px] px-3">
               <h2 className="lg:text-[24px] text-[22px] text-[white]">
@@ -86,7 +88,7 @@ const Details = () => {
             <p className="lg:w-[440px] w-full mt-7 text-[#596780] text-[18px]">
               {car.description}
             </p>
-            <div className="flex flex-row gap-4 lg:gap-16 mt-7">
+            <div className="flex flex-row gap-2 lg:gap-16 mt-7">
               <p className="flex flex-col gap-3 text-[#90A3BF] text-[14px]">
                 <span>TypeCar</span>Steering
               </p>
