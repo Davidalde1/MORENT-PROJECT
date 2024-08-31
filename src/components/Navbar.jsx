@@ -53,7 +53,7 @@ const Navbar = () => {
         </div>
       </nav>
       {showSidebar && (
-        <aside className={`fixed lg:hidden top-14 left-0 w-60 h-full bg-gray-900 text-white transition-transform transform ${isSidebarVisible ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
+        <aside className={`fixed lg:hidden md:hidden top-14 left-0 w-60 h-full bg-[#f3f4f5] text-white transition-transform transform ${isSidebarVisible ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0`}>
           <SideBar />
         </aside>
       )}

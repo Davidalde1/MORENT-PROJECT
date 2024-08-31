@@ -15,9 +15,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 const Details = () => {
   const location = useLocation();
   const { car } = location.state;
-  // const {id} = useParams();
-  // const {cars} = useCars();
-  // const car = cars.find((car) => car.id === parseInt(id));
+  
   if (!car) {
     return <div>Car not found</div>
   }
@@ -64,7 +62,7 @@ const Details = () => {
               </div>
             </div>
           </div>
-          <div className="bg-white px-3 lg:w-[520px]">
+          <div className="bg-white px-3 lg:w-[530px]">
             <div className="mt-3 flex items-center justify-between">
               <span className="text-[28px] text-[#1A202C] font-bold">
                 {car.carName}
@@ -102,7 +100,7 @@ const Details = () => {
                 <span>{car.seatingCapacity}</span>{car.fuelCapacity}
               </p>
             </div>
-            <div className="flex items-center justify-between mt-7 ">
+            <div className="flex items-center justify-between mt-12 ">
               <div>
                 <div className="flex items-center text-[#90A3BF]">
                   <p>
@@ -127,7 +125,7 @@ const Details = () => {
             </div>
           </div>
         </div>
-        <div className="px-[25px] lg:w-[95%]">
+        <div className="px-[15px] lg:px-[25px] lg:w-[95%]">
           <div className="bg-white px-4 py-4 mt-5">
             <div className="flex items-center flex-row gap-2">
               <div className="text-[#1A202C] text-[16px] font-bold">
@@ -145,7 +143,7 @@ const Details = () => {
                   className="w-[45px] h-[40px]"
                 />
               </div>
-              <div>
+              <div className="w-full">
                 <div className="flex items-start justify-between lg:flex-row flex-col mt-2 lg:mt-0">
                   <div>
                   <p className="flex flex-col text-[12px] text-[#90A3BF]">
@@ -168,7 +166,7 @@ const Details = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-[#596780] text-[12px] lg:w-[896px] w-full mt-2 lg:mt-0">
+                <p className="text-[#596780] text-[12px] w-full mt-2 lg:mt-0">
                   We are very happy with the service from the MORENT App. Morent
                   has a low price and also a large variety of cars with good and
                   comfortable facilities. In addition, the service provided by
@@ -184,7 +182,7 @@ const Details = () => {
                   className="w-[45px] h-[40px]"
                 />
               </div>
-              <div>
+              <div className="w-full">
                 <div className="flex items-start justify-between lg:flex-row flex-col mt-2 lg:mt-0">
                   <div>
                   <p className="flex flex-col text-[12px] text-[#90A3BF]">
@@ -207,7 +205,7 @@ const Details = () => {
                     </div>
                   </div>
                 </div>
-                <p className="text-[#596780] text-[12px] lg:w-[896px] w-full mt-2 lg:mt-0">
+                <p className="text-[#596780] text-[12px] w-full mt-2 lg:mt-0">
                   We are greatly helped by the services of the MORENT
                   Application. Morent has low prices and also a wide variety of
                   cars with good and comfortable facilities. In addition, the
