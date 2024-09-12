@@ -48,8 +48,8 @@ const Summary = () => {
         <p className="flex items-center justify-between text-[#1A202C] text-[12px]"><span className="text-[#90A3BF] text-[14px]">Subtotal</span>$80.00</p>
         <p className="flex items-center justify-between text-[#1A202C] text-[12px] mt-3"><span className="text-[#90A3BF] text-[14px]">Tax</span>$0</p>
       </div>
-      <div className="flex items-center justify-between px-3 py-2 bg-[#f6f7f9] rounded-[10px] mt-3">
-        <span><input type="text" placeholder="Apply promo code" className="focus:outline-none bg-[#f6f7f9] text-[#1A202C] text-[12px] w-[40vh]"/></span>
+      <div className="flex items-center justify-between px-3 py-1 bg-[#f6f7f9] rounded-[10px] mt-3">
+        <span><input type="text" placeholder="Apply promo code" className="focus:outline-none bg-[#f6f7f9] text-[#1A202C] text-[12px] w-[30vh]"/></span>
         <span className="text-[#90A3BF] text-[14px]"><button>Apply now</button></span>
       </div>
       <div className="flex items-center justify-between">

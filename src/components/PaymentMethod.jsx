@@ -26,7 +26,7 @@ const PaymentMethod = () => {
             </div>
           </div>
         </div>
-        <div className="lg:flex md:flex-row flex-row items-center gap-4 mt-4">
+        <div className="lg:flex md:flex-col flex-row items-center gap-4 mt-4">
           <div>
             <h4 className="mb-2 text-[16px] text-[#1A202C] font-bold">
               Card Number
@@ -48,7 +48,7 @@ const PaymentMethod = () => {
             />
           </div>
         </div>
-        <div className="lg:flex md:flex-row flex-row items-center gap-4 mt-2">
+        <div className="lg:flex md:flex-col flex-row items-center gap-4 mt-2">
           <div>
             <h4 className="mb-2 text-[16px] text-[#1A202C] font-bold mt-3">
               Card holder
