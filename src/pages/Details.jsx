@@ -115,12 +115,10 @@ const Details = () => {
                 </div>
               </div>
               <div>
-                <a href="/payment">
                   <Button
                    btnText="Rent Now"
                    func={goToPayment} 
                    />
-                </a>
               </div>
             </div>
           </div>
