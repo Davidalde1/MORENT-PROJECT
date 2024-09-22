@@ -1,4 +1,5 @@
 import React from "react";
+import {getCurrentDate} from "../assets/dateUtils"
 
 const Footer = () => {
   return (
@@ -75,7 +76,7 @@ const Footer = () => {
       </div>
       <div className="flex justify-between flex-col lg:flex-row mt-3 gap-3">
         <div className="text-[#1A202C] text-[12px] lg:text-[14px] font-semibold">
-          &copy;2022MORENT.All rights reserved
+        <p>© {getCurrentDate()} MORENT.All rights reserved </p>
         </div>
         <div className="flex items-center gap-6 text-[12px] lg:text-[14px]">
           <span>Privacy&Policy</span>

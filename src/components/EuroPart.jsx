@@ -26,7 +26,7 @@ const EuroPart = () => {
               <option value="Select Your Date">Select Your Date</option>
             </select>
           </div>
-          <div className="border-none w-[92%] p-0 font-plus flex flex-col justify-start items-start gap-[7px] ">
+          <div className="border-none w-[100%] p-0 font-plus flex flex-col justify-start items-start gap-[7px] ">
             <span className="font-bold m-auto lg:m-0">Time</span>
             <select name="selectTime" className="m-auto lg:m-0">
               <option value="Select Your Time">Select Your Time</option>

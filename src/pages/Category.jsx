@@ -3,9 +3,12 @@ import Button from "../ReusableComponents/Button";
 import SideBar from "../ReusableComponents/SideBar";
 import EuroPart from "../components/EuroPart";
 import CarContainer from "./../components/CarCard/CarContainer";
+// import { useCars } from "../components/Context/CarContext";
+// import CarCard from "../components/CarCard/CarCard"
 
 
 const Category = () => {
+  // const { cars, recommendedCars } = useCars();
   
   return (
     <div className="flex gap-2 min-h-screen">
@@ -16,7 +19,13 @@ const Category = () => {
         <div className="w-full">
           <EuroPart/>
         </div>
-        <div className="flex flex-wrap items-center flex-col justify-between">
+        <div className="p-12 flex-[3] flex min-w-[300px] flex-wrap items-center justify-between gap-y-12">
+        {/* {cars.map((car) => (
+            <CarCard key={car.id} car={car} />
+          ))}
+          {recommendedCars.map((car) => (
+            <CarCard key={car.id} car={car} />
+          ))} */}
             <CarContainer showAll={true}/>
           </div>
         <div className="flex items-center justify-center">

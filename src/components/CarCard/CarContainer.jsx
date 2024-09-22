@@ -5,6 +5,8 @@ import {useCars} from "../Context/CarContext";
 
 const CarContainer = ({ showAll = true, showRecommendedCount = 3 }) => {
   const { cars, recommendedCars } = useCars();
+  console.log(cars);
+  console.log(recommendedCars);
 
   const displayedCars = showAll ? cars : cars.slice(0, 4);
   const displayedRecommendedCars = showAll
