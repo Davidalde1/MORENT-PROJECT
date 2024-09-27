@@ -46,7 +46,7 @@ const Search = () => {
         <CiSearch className="text-gray-400 mr-2" />
         <input
           type="text"
-          placeholder="Search for cars..."
+          placeholder="Search car here"
           className="text-sm w-full focus:outline-none"
           value={searchTerm}
           onChange={handleSearchChange}
