@@ -1,26 +1,51 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import Home from './pages/Home';
 import Category from './pages/Category';
 import Details from './pages/Details';
 import Payment from './pages/Payment';
+import { AuthProvider } from './components/Context/authContext';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import ProtectedRoutes from './lib/ProtectedRoutes';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
-    <div className='bg-[#f4f5f6] px-[30]'>
+    
       <BrowserRouter>
-        <Navbar />
+        <AuthProvider>
+        <div className='px-[30]'>
           <Routes>
-            <Route path='/' element={<Home/>} />
-            <Route path='/category' element={<Category/>} />
-            <Route path='/details/:id' element={<Details/>} />
-            <Route path='/payment' element={<Payment/>} />
+            <Route path='/register' element={<Register/>} />
+            <Route path='/login' element={<Login/>} />
+            <Route path='/' element={
+              <ProtectedRoutes>
+              <Home/>
+              </ProtectedRoutes>
+              } />
+            <Route path='/category' element={
+              <ProtectedRoutes>
+              <Category/>
+              </ProtectedRoutes>
+              } />
+            <Route path='/details/:id' element={
+              <ProtectedRoutes>
+              <Details/>
+              </ProtectedRoutes>
+              } />
+            <Route path='/payment' element={
+              <ProtectedRoutes>
+              <Payment/>
+              </ProtectedRoutes>
+              } />
+              <Route path='*' element={<Navigate to ='/' replace={true}/>}/>
           </Routes>
-         <Footer/> 
+          <ToastContainer/>
+          </div>
+          </AuthProvider>
        </BrowserRouter>
-    </div>
+    
   )
 }
 

@@ -38,7 +38,7 @@ const Navbar = () => {
 useEffect(() => {
   const storedLikedCars = JSON.parse(localStorage.getItem("likedCars")) || {};
   setLikedCars(storedLikedCars);
-  console.log(storedLikedCars);
+  // console.log(storedLikedCars);
   const checkForNewCars = async () => {
     try {
       const response = await fetch("https://morentb.vercel.app/api/cars");
@@ -75,7 +75,7 @@ useEffect(() => {
                 <div>
                   <div>
                   <FaHeart color="red"/>
-                  <span className="absolute top-[-8px] left-[26px] text-blue-900">{Object.keys(likedCars).length}</span>
+                  <span className="absolute top-[-12px] left-[20px] border rounded-full p-[1px] px-2 bg-red-500 text-white">{Object.keys(likedCars).length}</span>
                   </div>
                 </div>
               ) : ( 

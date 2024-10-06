@@ -3,6 +3,8 @@ import Button from "../ReusableComponents/Button";
 import SideBar from "../ReusableComponents/SideBar";
 import EuroPart from "../components/EuroPart";
 import CarContainer from "./../components/CarCard/CarContainer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 // import { useCars } from "../components/Context/CarContext";
 // import CarCard from "../components/CarCard/CarCard"
 
@@ -12,6 +14,7 @@ const Category = () => {
   
   return (
     <div className="flex gap-2 min-h-screen">
+      <Navbar/>
       <div className="bg-[#ffffff] mt-1 w-1/6 hidden md:hidden lg:block">
         <SideBar/>
       </div>
@@ -35,6 +38,7 @@ const Category = () => {
             />
         </div>
       </div>
+      <Footer/>
     </div>
   );
 };

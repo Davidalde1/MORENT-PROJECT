@@ -2,7 +2,7 @@ import { createContext,useEffect, useContext, useState } from "react";
 
 const AuthContext = createContext(null);
 
-export const AuthProvider = () => {
+export const AuthProvider = ({children}) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -32,6 +32,11 @@ export const AuthProvider = () => {
     verifyToken();
   }, []);
 
+  const register = (userData) => {
+    setUser(userData);
+    localStorage.setItem("accessToken", userData.accessToken);
+  };
+
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem("accessToken", userData.accessToken);
@@ -51,7 +56,7 @@ export const AuthProvider = () => {
 
   return (
     <AuthContext.Provider
-      value={{ user, login, logout, loading, updateProfileImage }}
+      value={{ user, register, login, logout, loading, updateProfileImage }}
     >
       {children}
     </AuthContext.Provider>

@@ -55,13 +55,12 @@ const Search = () => {
       </div>
 
       {searchResults.length > 0 && (
-        <div className="absolute mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-10 max-h-96 overflow-y-auto">
+        <div className="absolute mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg max-h-96 overflow-y-auto">
           {searchResults.map((car) => (
             <div
               key={car.id}
               onClick={() => handleCarSelect(car.id)}
-              className="flex items-center p-3 hover:bg-gray-100 cursor-pointer transition duration-150 ease-in-out"
-            >
+              className="flex items-center p-3 hover:bg-gray-100 cursor-pointer transition duration-150 ease-in-out">
               <img
                 src={car.image}
                 alt={car.carName}
