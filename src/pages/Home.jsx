@@ -8,8 +8,6 @@ import EuroPart from "../components/EuroPart";
 import { useNavigate } from "react-router-dom";
 import { Koenigsegg, NissanGT,} from "../assets/assets";
 import CarContainer from "./../components/CarCard/CarContainer";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 // import Jumbotron from "../components/jumbotron/jumbotron";
 
 const Home = () => {
@@ -20,7 +18,6 @@ const Home = () => {
   };
   return (
     <div className="w-[100%] min-h-screen">
-      <Navbar/>
       <main className="lg:px-[4rem] lg:py-[2rem] h-max bg-[#f6f7f9] pt-[2rem] p-[2rem]">
         <div className="lg:m-auto w-[100%]">
           {/* jumbotron */}
@@ -93,7 +90,6 @@ const Home = () => {
           />
         </div>
       </main>
-      <Footer/>
     </div>
   );
 };

@@ -9,13 +9,16 @@ import Register from './pages/Register';
 import Login from './pages/Login';
 import ProtectedRoutes from './lib/ProtectedRoutes';
 import { ToastContainer } from 'react-toastify';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 const App = () => {
   return (
     
       <BrowserRouter>
         <AuthProvider>
-        <div className='px-[30]'>
+        <div className='px-[30] bg-[#f6f7f9]'>
+          <Navbar/>
           <Routes>
             <Route path='/register' element={<Register/>} />
             <Route path='/login' element={<Login/>} />
@@ -41,6 +44,7 @@ const App = () => {
               } />
               <Route path='*' element={<Navigate to ='/' replace={true}/>}/>
           </Routes>
+          <Footer/>
           <ToastContainer/>
           </div>
           </AuthProvider>

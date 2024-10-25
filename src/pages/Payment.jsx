@@ -3,15 +3,11 @@ import RentalInfo from '../components/RentalInfo';
 import PaymentMethod from '../components/PaymentMethod';
 import Confirmation from '../components/Confirmation';
 import Summary from '../components/Summary';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
-
 
 const Payment = () => {
 
   return (
     <div className='lg:flex md:flex-row flex-row gap-6 mt-4 w-[87%] mx-auto font-plus'>
-      <Navbar/>
       <div className='w-full md:w-full lg:w-3/5'>
         <div className='bg-[#ffffff] px-4 py-4 rounded-[10px]'>
           <h3 className='text-[18px] text-[#1A202C] font-bold'>Billing Info</h3>
@@ -65,7 +61,6 @@ const Payment = () => {
       <div className='lg:w-2/5 md:w-full w-full mt-3 lg:mt-0'>
       <Summary/>
       </div>
-      <Footer/>
     </div>
   )
 }

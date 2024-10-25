@@ -6,8 +6,7 @@ import CarContainer from "./../components/CarCard/CarContainer";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoMdHeart } from "react-icons/io";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+
 
 const Details = () => {
   const location = useLocation();
@@ -24,7 +23,6 @@ const Details = () => {
 
   return (
     <div className="flex min-h-screen font-plus">
-      <Navbar/>
       <div className="w-1/6 bg-white mt-1 hidden lg:block">
         <SideBar />
       </div>
@@ -149,7 +147,6 @@ const RecentCars = () => (
     <div className="flex-wrap gap-6">
       <CarContainer showAll={false} showRecommendedCount={4} />
     </div>
-    <Footer/>
   </div>
 );
 

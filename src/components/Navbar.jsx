@@ -75,7 +75,7 @@ useEffect(() => {
                 <div>
                   <div>
                   <FaHeart color="red"/>
-                  <span className="absolute top-[-12px] left-[20px] border rounded-full p-[1px] px-2 bg-red-500 text-white">{Object.keys(likedCars).length}</span>
+                  <span className="absolute top-[-12px] left-[20px] border rounded-full p-1 px-[8px] bg-red-500 text-white text-[10px]">{Object.keys(likedCars).length}</span>
                   </div>
                 </div>
               ) : ( 
