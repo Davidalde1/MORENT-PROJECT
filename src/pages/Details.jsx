@@ -19,7 +19,7 @@ const Details = () => {
   const navigate = useNavigate();
   const goToPayment = () => {
     navigate("/payment", { state: { car } });
-  };
+  }; 
 
   return (
     <div className="flex min-h-screen font-plus">

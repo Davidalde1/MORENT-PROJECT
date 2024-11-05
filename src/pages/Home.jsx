@@ -75,7 +75,7 @@ const Home = () => {
           {/* view_all */}
           <div className="flex items-center justify-between mt-[2rem] px-4">
             <span className="font-medium text-[16px]">Popular Car</span>
-            <Button btnText="View All" className="text-[#3563E9] cursor-pointer bg-[#f6f7f9]" />
+            <Button btnText="View All" className="text-[#3563E9] cursor-pointer bg-[#f6f7f9] animate-bounce" />
           </div>
           <div className="flex items-center flex-col justify-between px-4">
             <CarContainer showAll={true}/>

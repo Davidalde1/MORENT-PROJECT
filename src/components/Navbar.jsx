@@ -83,12 +83,12 @@ useEffect(() => {
               )}
                 
             </div>
-            <div className="lg:px-2 lg:py-2 mb-5 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600">
+            <div className="lg:px-2 lg:py-2 mb-5 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600 relative">
               <div>
               <IoMdNotifications 
-               color={newCarsCount > 0 ? "yellow" : "inherit"}
+               color={newCarsCount > 0 ? "#3563E9" : "inherit"}
               />
-              {newCarsCount > 0 && <span className="badge">{newCarsCount}</span>}
+              {newCarsCount > 0 && <span className="absolute top-[-12px] left-[20px] border rounded-full p-1 px-[8px] bg-[#3563E9] text-white text-[10px]">{newCarsCount}</span>}
               </div>
             </div>
             <div className="lg:px-2 lg:py-2 mb-5 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600"
