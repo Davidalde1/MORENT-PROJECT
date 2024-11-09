@@ -10,7 +10,9 @@ import Login from './pages/Login';
 import ProtectedRoutes from './lib/ProtectedRoutes';
 import { ToastContainer } from 'react-toastify';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
+// import Footer from './components/Footer';
+import Pay from './components/Pay';
+import Success from './components/Success';
 
 const App = () => {
   return (
@@ -24,32 +26,41 @@ const App = () => {
             <Route path='/login' element={<Login/>} />
             <Route path='/' element={
               <ProtectedRoutes>
-              <Home/>
+                <Home/>
               </ProtectedRoutes>
-              } />
+            } />
             <Route path='/category' element={
               <ProtectedRoutes>
-              <Category/>
+                <Category/>
               </ProtectedRoutes>
-              } />
+            } />
             <Route path='/details/:id' element={
               <ProtectedRoutes>
-              <Details/>
+                <Details/>
               </ProtectedRoutes>
-              } />
+            } />
             <Route path='/payment' element={
               <ProtectedRoutes>
-              <Payment/>
+                <Payment/>
               </ProtectedRoutes>
-              } />
-              <Route path='*' element={<Navigate to ='/' replace={true}/>}/>
+            } />
+            <Route path='/pay' element={
+              <ProtectedRoutes>
+                <Pay/>
+              </ProtectedRoutes>
+            } />
+            <Route path='/success' element={
+              <ProtectedRoutes>
+                <Success/>
+              </ProtectedRoutes>
+            } />
+            <Route path='*' element={<Navigate to='/' replace={true}/>} />
           </Routes>
-          <Footer/>
+          {/* <Footer/> */}
           <ToastContainer/>
-          </div>
-          </AuthProvider>
-       </BrowserRouter>
-    
+        </div>
+      </AuthProvider>
+    </BrowserRouter>    
   )
 }
 

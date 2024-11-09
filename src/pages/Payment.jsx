@@ -3,10 +3,12 @@ import RentalInfo from '../components/RentalInfo';
 import PaymentMethod from '../components/PaymentMethod';
 import Confirmation from '../components/Confirmation';
 import Summary from '../components/Summary';
+import Footer from '../components/Footer';
 
 const Payment = () => {
 
   return (
+    <div>
     <div className='lg:flex md:flex-row flex-row gap-6 mt-4 w-[87%] mx-auto font-plus'>
       <div className='w-full md:w-full lg:w-3/5'>
         <div className='bg-[#ffffff] px-4 py-4 rounded-[10px]'>
@@ -61,6 +63,8 @@ const Payment = () => {
       <div className='lg:w-2/5 md:w-full w-full mt-3 lg:mt-0'>
       <Summary/>
       </div>
+    </div>
+    <Footer/>
     </div>
   )
 }

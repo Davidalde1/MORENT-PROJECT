@@ -4,14 +4,15 @@ import { IoSettingsSharp } from "react-icons/io5";
 import Search from "./Search";
 import { FiMenu } from "react-icons/fi";
 import { useState, useEffect } from "react";
-import { useLocation} from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { IoMdHeartEmpty } from 'react-icons/io';
 
 import SideBar from "../ReusableComponents/SideBar";
-// import { useAuth } from "./Context/authContext";
+import { useAuth } from "./Context/authContext";
 
 const Navbar = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
@@ -20,11 +21,20 @@ const Navbar = () => {
   const [newCarsCount, setNewCarsCount] = useState(0);
 
   // contexts 
-  // const {user} = useAuth();
+  const {user, logout} = useAuth();
 
   const toggleSidebar = () => {
     setIsSidebarVisible(!isSidebarVisible);
     setIsMenuVisible(!isMenuVisible);
+  };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/login');
+    } catch (error) {
+      console.error("Logout failed:", error);
+    }
   };
 
   const showSidebar = location.pathname.includes('category') || location.pathname.includes('details');
@@ -42,17 +52,22 @@ useEffect(() => {
   const checkForNewCars = async () => {
     try {
       const response = await fetch("https://morentb.vercel.app/api/cars");
-      const {count} = await response.json();
+      const data = await response.json();
+      const currentCount = data.length;
       const oldCount = localStorage.getItem("carCount");
-      if (oldCount && count > parseInt(oldCount)) {
-        setNewCarsCount(count - parseInt(oldCount));
+      
+      if (oldCount) {
+        const difference = currentCount - parseInt(oldCount);
+        if (difference > 0) {
+          setNewCarsCount(difference);
+        }
       }
-    localStorage.setItem("carCount", count.toString());
+      
+      localStorage.setItem("carCount", currentCount.toString());
     } catch (error) {
       console.log(error);
     } 
   };
-
   checkForNewCars();
 
   // set up an interval to check for new cars every 5 minutes 
@@ -88,7 +103,7 @@ useEffect(() => {
               <IoMdNotifications 
                color={newCarsCount > 0 ? "#3563E9" : "inherit"}
               />
-              {newCarsCount > 0 && <span className="absolute top-[-12px] left-[20px] border rounded-full p-1 px-[8px] bg-[#3563E9] text-white text-[10px]">{newCarsCount}</span>}
+              {newCarsCount > 0 && <span className="absolute top-[-12px] left-[20px] border rounded-full p-1 px-[8px] bg-[red] text-white text-[10px]">{newCarsCount}</span>}
               </div>
             </div>
             <div className="lg:px-2 lg:py-2 mb-5 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600"
@@ -99,6 +114,16 @@ useEffect(() => {
             <div className="rounded-full w-[35px] h-[35px]">
                <img src="/man.png" alt="face of a man to chest level" />
             </div>
+            <div className="rounded-full w-[35px] h-[35px]">
+              {user && (
+                <button 
+                  onClick={handleLogout}
+                  className="bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-full w-[90px] h-[35px] transition-colors duration-200 shadow-md flex items-center justify-center gap-1"
+                >
+                  Logout
+                </button>
+              )}
+            </div>   
           </div>
         </div>
         <div className="flex lg:hidden cursor-pointer bg-blue-600 rounded-[4px]" onClick={toggleSidebar}>
@@ -112,12 +137,8 @@ useEffect(() => {
       )}
     </div>
   );
-};
-
+}
 export default Navbar;
-
-
-
 
 
 

@@ -6,6 +6,7 @@ import CarContainer from "./../components/CarCard/CarContainer";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import { useLocation, useNavigate } from "react-router-dom";
 import { IoMdHeart } from "react-icons/io";
+import Footer from "../components/Footer";
 
 
 const Details = () => {
@@ -22,6 +23,7 @@ const Details = () => {
   }; 
 
   return (
+    <div>
     <div className="flex min-h-screen font-plus">
       <div className="w-1/6 bg-white mt-1 hidden lg:block">
         <SideBar />
@@ -77,6 +79,8 @@ const Details = () => {
         <ReviewSection />
         <RecentCars />
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 };

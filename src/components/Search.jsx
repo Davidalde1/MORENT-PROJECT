@@ -35,9 +35,12 @@ const Search = () => {
   };
 
   const handleCarSelect = (carId) => {
-    navigate(`/car/${carId}`);
-    setSearchTerm("");
-    setSearchResults([]);
+    const selectedCar = cars.find(car => car.id === carId);
+    if (selectedCar) {
+      navigate(`/details/${carId}`, { state: { car: selectedCar } });
+      setSearchTerm("");
+      setSearchResults([]);
+    }
   };
 
   return (
@@ -83,5 +86,3 @@ const Search = () => {
 };
 
 export default Search;
-
-

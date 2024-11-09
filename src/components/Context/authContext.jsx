@@ -54,6 +54,14 @@ export const AuthProvider = ({children}) => {
     }));
   };
 
+  if (loading) {
+    return (
+      <div className="min-h-screen mt-2">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <AuthContext.Provider
       value={{ user, register, login, logout, loading, updateProfileImage }}

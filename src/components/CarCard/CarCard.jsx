@@ -29,12 +29,23 @@ const CarCard = ({ car }) => {
     if (!car || !car.id) return;
 
     const likedCars = JSON.parse(localStorage.getItem("likedCars")) || {};
+    const likedCarsPrices = JSON.parse(localStorage.getItem("likedCarsPrices")) || {};
+    
     if (liked) {
       delete likedCars[car.id];
+      delete likedCarsPrices[car.id];
     } else {
       likedCars[car.id] = true;
+      likedCarsPrices[car.id] = car.price;
     }
+    
     localStorage.setItem("likedCars", JSON.stringify(likedCars));
+    localStorage.setItem("likedCarsPrices", JSON.stringify(likedCarsPrices));
+    
+    // Calculate total price of liked cars
+    const totalPrice = Object.values(likedCarsPrices).reduce((sum, price) => sum + price, 0);
+    localStorage.setItem("totalLikedCarsPrice", totalPrice);
+    
     setLiked(!liked);
   };
 

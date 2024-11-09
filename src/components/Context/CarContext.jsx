@@ -40,8 +40,12 @@ export const CarProvider = ({children}) => {
       setIsLoading(false);
     }
   }, []);
+
   useEffect(() => {
-    fetchCars();
+    const loadInitialData = async () => {
+      await fetchCars();
+    };
+    loadInitialData();
   }, [fetchCars]);
 
   const processCarData = (carArray) => {
@@ -59,6 +63,15 @@ export const CarProvider = ({children}) => {
       };
     });
   };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen mt-2">
+        Loading...
+      </div>
+    );
+  }
+
   return (
     <CarContext.Provider
     value = {{cars, recommendedCars, isLoading, error, refetch: fetchCars }}
@@ -69,7 +82,6 @@ export const CarProvider = ({children}) => {
 };
 
 export const useCars = () => useContext(CarContext);
-
 
 
 

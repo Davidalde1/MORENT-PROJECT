@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../ReusableComponents/Button'
 import { AiTwotoneSafetyCertificate } from "react-icons/ai";
+import PaymentMethod from '../components/PaymentMethod';
 
 
 const Confirmation = () => {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleRentNow = async () => {
+    try {
+      setIsLoading(true);
+      // Add your payment processing logic here
+      await PaymentMethod.processPayment();
+      // Handle successful payment
+    } catch (error) {
+      // Handle payment error
+      console.error('Payment failed:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className='bg-[#ffffff] px-4 py-2 mt-5 rounded-[10px]'>
         <h4 className="mt-3 text-[18px] text-[#1A202C] font-bold">
@@ -26,8 +43,10 @@ const Confirmation = () => {
           </div>
           <div className='mt-4'>
             <Button
-            btnText="Rent Now"
+            btnText={isLoading ? "Processing..." : "Rent Now"}
             className="px-3 py-2 rounded-[10px] text-[12px] text-[#ffffff]"
+            onClick={handleRentNow}
+            disabled={isLoading}
             />
           </div>
           <div className='mt-4'>

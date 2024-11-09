@@ -8,6 +8,7 @@ import EuroPart from "../components/EuroPart";
 import { useNavigate } from "react-router-dom";
 import { Koenigsegg, NissanGT,} from "../assets/assets";
 import CarContainer from "./../components/CarCard/CarContainer";
+import Footer from "../components/Footer";
 // import Jumbotron from "../components/jumbotron/jumbotron";
 
 const Home = () => {
@@ -90,6 +91,7 @@ const Home = () => {
           />
         </div>
       </main>
+      <Footer/>
     </div>
   );
 };
