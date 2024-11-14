@@ -84,54 +84,54 @@ useEffect(() => {
           <Search/>
         </div>
         <div>
-          <div className={`lg:flex items-center gap-6 lg:gap-4 absolute lg:static bg-white h-[40vh] lg:h-auto p-8 lg:p-0 top-[60px] right-0 flex-col lg:flex-row w-[30%] lg:w-full justify-between ${isMenuVisible ? "flex" : "hidden"}`}>
-            <div className="lg:px-2 lg:py-2 mb-5 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600 relative">
+          <div className={`lg:flex items-center gap-6 lg:gap-4 absolute lg:static bg-white h-auto lg:h-auto p-6 lg:p-0 top-[60px] right-0 flex-col lg:flex-row w-[80%] md:w-[40%] lg:w-full justify-between shadow-lg lg:shadow-none rounded-lg lg:rounded-none transition-all duration-300 ${isMenuVisible ? "flex" : "hidden"}`}>
+            <div className="lg:px-3 lg:py-2 mb-4 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600 relative hover:bg-gray-50 transition-all duration-200 cursor-pointer">
               {Object.keys(likedCars).length > 0 ? (
-                <div>
-                  <div>
-                  <FaHeart color="red"/>
-                  <span className="absolute top-[-12px] left-[20px] border rounded-full p-1 px-[8px] bg-red-500 text-white text-[10px]">{Object.keys(likedCars).length}</span>
+                <div className="flex items-center justify-center">
+                  <div className="relative">
+                    <FaHeart color="red" className="text-xl hover:scale-110 transition-transform"/>
+                    <span className="absolute top-[-12px] right-[-12px] border rounded-full p-1 px-[8px] bg-red-500 text-white text-[10px] animate-pulse">{Object.keys(likedCars).length}</span>
                   </div>
                 </div>
               ) : ( 
-              <IoMdHeartEmpty />
+                <IoMdHeartEmpty className="text-xl hover:scale-110 transition-transform"/>
               )}
-                
             </div>
-            <div className="lg:px-2 lg:py-2 mb-5 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600 relative">
-              <div>
-              <IoMdNotifications 
-               color={newCarsCount > 0 ? "#3563E9" : "inherit"}
-              />
-              {newCarsCount > 0 && <span className="absolute top-[-12px] left-[20px] border rounded-full p-1 px-[8px] bg-[red] text-white text-[10px]">{newCarsCount}</span>}
+            <div className="lg:px-3 lg:py-2 mb-4 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600 relative hover:bg-gray-50 transition-all duration-200 cursor-pointer">
+              <div className="flex items-center justify-center">
+                <IoMdNotifications 
+                  color={newCarsCount > 0 ? "#3563E9" : "inherit"}
+                  className="text-xl hover:scale-110 transition-transform"
+                />
+                {newCarsCount > 0 && <span className="absolute top-[-12px] right-[-12px] border rounded-full p-1 px-[8px] bg-[red] text-white text-[10px] animate-pulse">{newCarsCount}</span>}
               </div>
             </div>
-            <div className="lg:px-2 lg:py-2 mb-5 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600"
-            onClick={() => navigate("/settings")}
+            <div className="lg:px-3 lg:py-2 mb-4 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600 cursor-pointer hover:bg-gray-50 transition-all duration-200"
+              onClick={() => navigate('/settings')}
             >
-              <IoSettingsSharp />
+              <IoSettingsSharp className="text-xl hover:scale-110 transition-transform"/>
             </div>
-            <div className="rounded-full w-[35px] h-[35px]">
-               <img src="/man.png" alt="face of a man to chest level" />
+            <div className="rounded-full w-[40px] h-[40px] overflow-hidden border-2 border-blue-500 hover:border-blue-600 transition-all duration-200 cursor-pointer">
+               <img src="/man.png" alt="face of a man to chest level" className="w-full h-full object-cover hover:scale-110 transition-transform"/>
             </div>
-            <div className="rounded-full w-[35px] h-[35px]">
+            <div className="w-full lg:w-auto">
               {user && (
                 <button 
                   onClick={handleLogout}
-                  className="bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-full w-[90px] h-[35px] transition-colors duration-200 shadow-md flex items-center justify-center gap-1"
+                  className="bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-full w-full lg:w-[90px] h-[35px] transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-1 transform hover:-translate-y-0.5"
                 >
-                  Logout
+                  <span>Logout</span>
                 </button>
               )}
             </div>   
           </div>
         </div>
-        <div className="flex lg:hidden cursor-pointer bg-blue-600 rounded-[4px]" onClick={toggleSidebar}>
+        <div className="flex lg:hidden cursor-pointer bg-blue-600 hover:bg-blue-700 rounded-[4px] transition-colors duration-200" onClick={toggleSidebar}>
           <FiMenu className="size-8 text-white"/>
         </div>
       </nav>
       {showSidebar && (
-        <aside className={`fixed lg:hidden top-14 left-0 w-60 h-full bg-[#f3f4f5] text-white transition-transform transform ${isSidebarVisible ? 'translate-x-0' : '-translate-x-full'}`}>
+        <aside className={`fixed lg:hidden top-14 left-0 w-64 h-full bg-[#f3f4f5] text-white shadow-lg transition-all duration-300 transform ${isSidebarVisible ? 'translate-x-0' : '-translate-x-full'}`}>
           <SideBar />
         </aside>
       )}

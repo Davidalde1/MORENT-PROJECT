@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useAuth } from "../components/Context/authContext";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../components/Footer";
 
 const Register = () => {
@@ -12,6 +13,18 @@ const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const toastConfig = {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  };
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,44 +42,19 @@ const Register = () => {
       if (response.ok) {
         const data = await response.json();
         register(data);
-        toast.success("Registration Successful", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          theme: "colored"
-        });
-        const from = location.state?.from?.pathname || "/login";
-        navigate(from, { replace: true });
+        toast.success("Registration Successful", toastConfig);
+        setTimeout(() => {
+          navigate('/login', { replace: true });
+        }, 3000);
       } else {
         const errorData = await response.json();
         toast.error(
-          errorData.message || "Registration Failed, Please Check Credentials",
-          {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            theme: "colored"
-          }
-        );
+          errorData.message || "Registration Failed, Please Check Credentials", toastConfig);
       }
     } catch (error) {
       console.log("Error", error);
-      toast.error("An unexpected error occured, Please try again later", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        theme: "colored"
-      });
-    }  };
+      toast.error("An unexpected error occured, Please try again later", toastConfig); 
+    }};
   return (
     <div>
     <div className="flex flex-col md:flex-row items-center">
@@ -122,6 +110,7 @@ const Register = () => {
       </div>
     </div>
     <Footer/>
+    <ToastContainer />
     </div>
   );
 };

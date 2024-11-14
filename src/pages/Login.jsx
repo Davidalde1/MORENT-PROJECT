@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useAuth } from "../components/Context/authContext";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../components/Footer";
 
 const Login = () => {
@@ -11,6 +12,18 @@ const Login = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+
+  const toastConfig = {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,41 +41,22 @@ const Login = () => {
       );
       if (response.ok) {
         const data = await response.json();
+        await toast.success("Login Successful", toastConfig);
         login(data);
-        toast.success("Login Successful", {
-          position: "top-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-        });
         const from = location.state?.from?.pathname || "/";
-        navigate(from, { replace: true });
+        setTimeout(() => {
+          navigate(from, { replace: true });
+        }, 1000);
       } else {
         const errorData = await response.json();
         toast.error(
           errorData.message || "Login Failed, Please Check Credentials",
-          {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-          }
+          toastConfig
         );
       }
     } catch (error) {
       console.log("Login Error", error);
-      toast.error("An unexpected error occured, Please try again later", {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-      });
+      toast.error("An unexpected error occured, Please try again later", toastConfig);
     }
   };
   return (
@@ -103,6 +97,7 @@ const Login = () => {
       </div>
     </div>
     <Footer/>
+    <ToastContainer />
     </div>
   );
 };

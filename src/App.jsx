@@ -13,6 +13,8 @@ import Navbar from './components/Navbar';
 // import Footer from './components/Footer';
 import Pay from './components/Pay';
 import Success from './components/Success';
+import Settings from './components/Settings';
+
 
 const App = () => {
   return (
@@ -44,9 +46,14 @@ const App = () => {
                 <Payment/>
               </ProtectedRoutes>
             } />
-            <Route path='/pay' element={
+            <Route path='/payment' element={
               <ProtectedRoutes>
-                <Pay/>
+                <Payment/>
+              </ProtectedRoutes>
+            } />
+            <Route path='/settings' element={
+              <ProtectedRoutes>
+                <Settings/>
               </ProtectedRoutes>
             } />
             <Route path='/success' element={
