@@ -90,7 +90,7 @@ useEffect(() => {
                 <div className="flex items-center justify-center">
                   <div className="relative">
                     <FaHeart color="red" className="text-xl hover:scale-110 transition-transform"/>
-                    <span className="absolute top-[-12px] right-[-12px] border rounded-full p-1 px-[8px] bg-red-500 text-white text-[10px] animate-pulse">{Object.keys(likedCars).length}</span>
+                    <span className="absolute top-[-22px] right-[-14px] border rounded-full p-1 px-[8px] bg-red-500 text-white text-[10px] animate-pulse">{Object.keys(likedCars).length}</span>
                   </div>
                 </div>
               ) : ( 
