@@ -41,10 +41,9 @@ const Register = () => {
       if (response.ok) {
         const data = await response.json();
         register(data);
-        const from = location.state?.from?.pathname || "/login";
         toast.success("Registration Successful", toastConfig);
         setTimeout(() => {
-          navigate(from, { replace: true });
+          navigate('/login', { replace: true });
         }, 3000);
       } else {
         const errorData = await response.json();
