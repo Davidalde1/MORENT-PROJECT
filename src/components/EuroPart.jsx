@@ -2,67 +2,78 @@ import React from "react";
 import { HiOutlineSwitchVertical } from "react-icons/hi";
 import { MdMyLocation } from "react-icons/md";
 
-
 const EuroPart = () => {
   return (
-    <div className="lg:w-[100%] w-[110%] flex gap-[1rem] lg:gap-[2rem] flex-col lg:flex-row items-center justify-center z-[500px]">
+    <div className=" mx-auto lg:w-full w-full flex gap-4 lg:gap-8 flex-col lg:flex-row items-center justify-center">
       {/* Pickup */}
-      <div className="w-[100%] bg-white rounded-[10px] lg:px-[30px] px-[10px] py-[10px] flex flex-col items-start justify-center">
-        <div className="flex items-center justify-center mb-[18px] gap-6 m-auto lg:m-0">
-          <MdMyLocation className="text-blue-700 text-[18px]" />
-          <span>Pick-up</span>
+      <div className="w-full bg-white rounded-lg shadow-md lg:px-6 px-4 py-5 flex flex-col items-center justify-center transition-all duration-300 hover:shadow-lg">
+        <div className="flex items-center justify-center md:justify-start mb-4 gap-3 w-full">
+          <MdMyLocation className="text-blue-700 text-xl md:text-2xl" />
+          <span className="text-gray-800 font-medium text-sm md:text-base">Pick-up</span>
         </div>
 
-        <div className="w-[100%] lg:h-[48%] h-auto grid lg:grid-cols-3 grid-cols-1 place-items-start gap-[20px]">
-          <div className="flex flex-col justify-start items-start gap-[7px] w-[100%] m-auto lg:m-0">
-            <span className="font-bold m-auto lg:m-0">locations</span>
-            <select name="selectCity" className="m-auto lg:m-0">
+        <div className="w-full grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 md:gap-6">
+          <div className="flex flex-col gap-2 w-full items-center md:items-start">
+            <span className="font-bold text-gray-700 text-sm md:text-base">Locations</span>
+            <select className="w-full px-3 md:px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-200 hover:border-blue-500">
               <option value="Select Your City">Select Your City</option>
+              <option value="london">London</option>
+              <option value="paris">Paris</option>
+              <option value="berlin">Berlin</option>
             </select>
           </div>
-          <div className="border-none w-[100%] p-0 font-plus flex flex-col justify-start items-start gap-[7px] ">
-            <span className="font-bold m-auto lg:m-0">Dates</span>
-            <select name="selectDates" className="m-auto lg:m-0">
-              <option value="Select Your Date">Select Your Date</option>
-            </select>
+          <div className="flex flex-col gap-2 w-full items-center md:items-start">
+            <span className="font-bold text-gray-700 text-sm md:text-base">Dates</span>
+            <input 
+              type="date" 
+              className="w-full px-3 md:px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-200 hover:border-blue-500"
+            />
           </div>
-          <div className="border-none w-[100%] p-0 font-plus flex flex-col justify-start items-start gap-[7px] ">
-            <span className="font-bold m-auto lg:m-0">Time</span>
-            <select name="selectTime" className="m-auto lg:m-0">
-              <option value="Select Your Time">Select Your Time</option>
-            </select>
+          <div className="flex flex-col gap-2 w-full items-center md:items-start">
+            <span className="font-bold text-gray-700 text-sm md:text-base">Time</span>
+            <input 
+              type="time" 
+              className="w-full px-3 md:px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-200 hover:border-blue-500"
+            />
           </div>
         </div>
+      </div>    
+      
+       {/* Switchbtn */}
+      <div className="bg-blue-700 p-4 rounded-lg cursor-pointer hover:bg-blue-800 transition-colors duration-200">
+        <HiOutlineSwitchVertical className="w-6 h-6 text-white" />
       </div>
-      {/* Switchbtn */}
-      <div className="bg-blue-700 p-[18px] rounded-[9px] cursor-pointer">
-        <HiOutlineSwitchVertical className="w-[30px] h-[30px] text-white" />
-      </div>
+
       {/* dropoff */}
-      <div className="w-[100%] bg-white rounded-[10px] lg:px-[30px] px-[10px] py-[10px] flex flex-col justify-center items-start">
-        <div className="flex items-center justify-center mb-[18px] gap-[6px] m-auto lg:m-0">
-          <MdMyLocation className="text-[18px] text-blue-600" />
-          <span>Drop-off</span>
+      <div className="w-full bg-white rounded-lg shadow-md lg:px-6 px-4 py-5 flex flex-col justify-center items-start">
+        <div className="flex items-center justify-start mb-4 gap-3 w-full">
+          <MdMyLocation className="text-blue-600 text-xl" />
+          <span className="text-gray-800 font-medium">Drop-off</span>
         </div>
 
-        <div className="w-[100%] lg:h-[48px] h-auto grid lg:grid-cols-3 grid-cols-1 place-items-start gap-[20px]">
-          <div className="flex flex-col items-start justify-start gap-[7px] w-[100%]">
-            <span className="font-bold m-auto lg:m-0">locations</span>
-            <select name="selectCity" className="m-auto lg:m-0">
+        <div className="w-full grid lg:grid-cols-3 grid-cols-1 gap-6">
+          <div className="flex flex-col gap-2 w-full">
+            <span className="font-bold text-gray-700">Locations</span>
+            <select className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
               <option value="Select Your City">Select Your City</option>
+              <option value="london">London</option>
+              <option value="paris">Paris</option>
+              <option value="berlin">Berlin</option>
             </select>
           </div>
-          <div className="flex flex-col items-start justify-start gap-[7px] w-[100%]">
-            <span className="font-bold m-auto lg:m-0">Dates</span>
-            <select name="selectDates" className="m-auto lg:m-0">
-              <option value="Select Your Date">Select Your Date</option>
-            </select>
+          <div className="flex flex-col gap-2 w-full">
+            <span className="font-bold text-gray-700">Dates</span>
+            <input 
+              type="date" 
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
-          <div className="flex flex-col items-start justify-start gap-[7px] w-[100%]">
-            <span className="font-bold m-auto lg:m-0">Time</span>
-            <select name="selectTime" className="m-auto lg:m-0">
-              <option value="Select Your Time">Select Your Time</option>
-            </select>
+          <div className="flex flex-col gap-2 w-full">
+            <span className="font-bold text-gray-700">Time</span>
+            <input 
+              type="time" 
+              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
           </div>
         </div>
       </div>

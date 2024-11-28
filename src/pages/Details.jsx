@@ -148,10 +148,11 @@ const RecentCars = () => (
       <h2 className="text-lg font-bold text-[#1A202C]">Recent Cars</h2>
       <button className="text-[#3563E9] text-sm">View All</button>
     </div>
-    <div className="flex-wrap gap-6">
-      <CarContainer showAll={false} showRecommendedCount={4} />
+    <div className="flex-wrap gap-6 w-full"> 
+      <CarContainer showAll={false} showRecommendedCount={4}
+      />
+    </div>  
     </div>
-  </div>
 );
 
 export default Details;

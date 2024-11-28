@@ -77,14 +77,14 @@ useEffect(() => {
 
 
   return (
-    <div className="py-4 bg-white sticky left-0 top-0">
+    <div className="py-4 bg-white sticky left-0 top-0 z-50">
       <nav className="flex items-center justify-between gap-2 lg:gap-4 px-[20px] lg:px-[3rem] md:px-[3rem]">
         <div className="flex items-center gap-4 lg:gap-10">
           <a href="/"><span className="text-[#3563E9] text-[20px] lg:text-[32px]">MORENT</span></a>
           <Search/>
         </div>
         <div>
-          <div className={`lg:flex items-center gap-6 lg:gap-4 absolute lg:static bg-white h-auto lg:h-auto p-6 lg:p-0 top-[60px] right-0 flex-col lg:flex-row w-[80%] md:w-[40%] lg:w-full justify-between shadow-lg lg:shadow-none rounded-lg lg:rounded-none transition-all duration-300 ${isMenuVisible ? "flex" : "hidden"}`}>
+          <div className={`lg:flex items-center gap-6 lg:gap-4 absolute lg:static bg-white h-auto lg:h-auto p-6 lg:p-0 top-[60px] right-0 flex-col lg:flex-row w-[30%] md:w-[40%] lg:w-full justify-between shadow-lg lg:shadow-none rounded-lg lg:rounded-none transition-all duration-300 z-50 ${isMenuVisible ? "flex" : "hidden"}`}>
             <div className="lg:px-3 lg:py-2 mb-4 lg:mb-0 rounded-full lg:border border-gray-200 text-gray-600 relative hover:bg-gray-50 transition-all duration-200 cursor-pointer">
               {Object.keys(likedCars).length > 0 ? (
                 <div className="flex items-center justify-center">
@@ -118,7 +118,7 @@ useEffect(() => {
               {user && (
                 <button 
                   onClick={handleLogout}
-                  className="bg-red-500 hover:bg-red-600 text-white text-sm font-semibold rounded-full w-full lg:w-[90px] h-[35px] transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-1 transform hover:-translate-y-0.5"
+                  className="bg-red-500 hover:bg-red-600 text-white text-xs sm:text-sm font-semibold rounded-full w-[90px] sm:w-[100px] mx-auto lg:w-[90px] h-[32px] sm:h-[35px] transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-1 transform hover:-translate-y-0.5 active:translate-y-0"
                 >
                   <span>Logout</span>
                 </button>
@@ -131,13 +131,14 @@ useEffect(() => {
         </div>
       </nav>
       {showSidebar && (
-        <aside className={`fixed lg:hidden top-14 left-0 w-64 h-full bg-[#f3f4f5] text-white shadow-lg transition-all duration-300 transform ${isSidebarVisible ? 'translate-x-0' : '-translate-x-full'}`}>
+        <aside className={`fixed lg:hidden top-0 left-0 w-64 h-full bg-[#f3f4f5] text-white shadow-lg transition-all duration-300 transform z-40 ${isSidebarVisible ? 'translate-x-0' : '-translate-x-full'}`}>
           <SideBar />
         </aside>
       )}
     </div>
   );
-}
+};
+
 export default Navbar;
 
 

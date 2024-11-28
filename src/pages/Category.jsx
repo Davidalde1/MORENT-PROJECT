@@ -21,19 +21,13 @@ const Category = () => {
         <div className="w-full">
           <EuroPart/>
         </div>
-        <div className="p-12 flex-[3] flex min-w-[300px] flex-wrap items-center justify-between gap-y-12">
-        {/* {cars.map((car) => (
-            <CarCard key={car.id} car={car} />
-          ))}
-          {recommendedCars.map((car) => (
-            <CarCard key={car.id} car={car} />
-          ))} */}
+        <div className="p-12 flex-[3] flex mx-auto min-w-[300px] flex-wrap items-center justify-center gap-y-12">
             <CarContainer showAll={true}/>
           </div>
         <div className="flex items-center justify-center">
             <Button 
             btnText="Show more car" 
-            className="mt-8 text-[12px] px-4 py-2"
+            className="mt-8 mb-8 text-[12px] px-4 py-2"
             />
         </div>
       </div> 

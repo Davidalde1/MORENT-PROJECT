@@ -4,11 +4,13 @@ import Profile from './Profile'
 
 const Settings = () => {
 return (
-  <div>
+  <div className='flex flex-col md:flex-row gap-8 max-w-7xl mx-auto'>
+    <div className='w-full md:w-1/2 rounded-xl'>
+       <Profile/>
+    </div>
+    <div className='w-full md:w-1/2 rounded-xl'>
       <AddCarForm/>
-      <Profile/>
-  </div>
-)
-}
+    </div>
+  </div>)}
 
 export default Settings

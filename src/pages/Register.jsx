@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../components/Context/authContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Footer from "../components/Footer";
@@ -8,7 +8,6 @@ import Footer from "../components/Footer";
 const Register = () => {
   const { register } = useAuth();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");

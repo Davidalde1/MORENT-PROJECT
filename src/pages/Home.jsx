@@ -20,55 +20,38 @@ const Home = () => {
   return (
     <div className="w-[100%] min-h-screen">
       <main className="lg:px-[4rem] lg:py-[2rem] h-max bg-[#f6f7f9] pt-[2rem] p-[2rem]">
-        <div className="lg:m-auto w-[100%]">
-          {/* jumbotron */}
-          {/* <div className="mt-[2rem] lg:flex flex-col items-center justify-center gap-[4rem]">
-            <Jumbotron
-              headText="The Best Platform for Car Rental"
-              desc="Providing cheap car rental services and safe and comfortable facilities."
-              img={carimage}
-              className="bg-[#54a6ff]"
-              // backdropImg={ellipse}
-            />
-            <Jumbotron
-              headText="Easy way to rent a car at a low price"
-              desc="Providing cheap car rental services and safe and comfortable facilities."
-              img={car2}
-              buttonStyle="button_light_blue"
-              backdropImg={arrowsgroup}
-            />
-          </div> */}
-          <div className="flex items-center gap-10 px-10 lg:px-4 flex-col lg:flex-row">
-        <div className="w-[300px] md:w-[400px] lg:w-[100%] h-[280px] bg-[#54A6FF] rounded-[10px] px-3">
-          <h2 className="text-[24px] text-white w-[220px]">
-            The Best Platform for Car Rental
-          </h2>
-          <p className="text-white text-[12px] w-[240px] mt-2">
-            Ease of doing a car rental safely and reliably. Of course at a low
-            price.
-          </p>
-          <Button btnText="Rental car" className="mt-4" />
-          <img 
-          src="/carrental1.png" 
-          alt="moving car" 
-          className="w-[300px] h-[90px] mx-auto"
-          />
-        </div>
-        <div className="w-[300px] md:w-[400px] lg:w-[100%] h-[280px] bg-[#3563E9] rounded-[10px] px-3">
-          <h2 className="text-[24px] text-[white] w-[220px]">
-            Easy way to rent a car at a low price
-          </h2>
-          <p className="text-white text-[12px] w-[240px] mt-2">
-            Providing cheap car rental services and safe and comfortable
-            facilities.
-          </p>
-          <Button btnText="Rental car" className="bg-[#54A6FF] mt-4" />
-          <img
-            src="/carrental2.png"
-            alt="moving car"
-            className="w-[300px] h-[90px] mx-auto"
-          />
-        </div>
+        <div className="lg:m-auto w-full">
+          <div className="flex items-center gap-4 md:gap-6 lg:gap-10 px-4 lg:px-4 flex-col lg:flex-row">
+            <div className="w-full sm:w-[350px] md:w-full lg:w-full h-auto min-h-[280px] bg-[#54A6FF] rounded-[10px] p-4 lg:p-6">
+              <h2 className="text-[20px] md:text-[24px] text-white max-w-[280px] lg:max-w-full">
+                The Best Platform for Car Rental
+              </h2>
+              <p className="text-white text-[12px] md:text-[14px] max-w-[280px] lg:max-w-full mt-3">
+                Ease of doing a car rental safely and reliably. Of course at a low
+                price.
+              </p>
+              <Button btnText="Rental car" className="mt-4 w-auto" />
+              <img 
+                src="/carrental1.png" 
+                alt="moving car" 
+                className="w-[200px] sm:w-[250px] md:w-[300px] h-auto object-contain mx-auto mt-4"
+              />
+            </div>
+            <div className="w-full sm:w-[350px] md:w-full lg:w-full h-auto min-h-[280px] bg-[#3563E9] rounded-[10px] p-4 lg:p-6">
+              <h2 className="text-[20px] md:text-[24px] text-white max-w-[280px] lg:max-w-full">
+                Easy way to rent a car at a low price
+              </h2>
+              <p className="text-white text-[12px] md:text-[14px] max-w-[280px] lg:max-w-full mt-3">
+                Providing cheap car rental services and safe and comfortable
+                facilities.
+              </p>
+              <Button btnText="Rental car" className="bg-[#54A6FF] mt-4 w-auto" />
+              <img
+                src="/carrental2.png"
+                alt="moving car"
+                className="w-[200px] sm:w-[250px] md:w-[300px] h-auto object-contain mx-auto mt-4"
+              />
+            </div>
       </div>
           <div className="lg:w-[100%] w-[90%] mt-[4rem] px-4">
             <EuroPart/>

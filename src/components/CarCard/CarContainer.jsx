@@ -18,13 +18,13 @@ const CarContainer = ({ showAll = true, showRecommendedCount = 3 }) => {
 
   return (
     <div className>
-      <div className="flex flex-wrap items-center justify-between mt-[40px] gap-[40px]">
+      <div className="flex flex-wrap items-center justify-between mt-[40px] gap-[40px] mx-auto w-full">
         {displayedCars.map((car) => (
           <CarCard key={car.id} car={car} />
         ))}
       </div>
       <h2 className="mt-[40px] px-4">Recommended Cars</h2>
-      <div className="flex flex-wrap items-center justify-between mt-[40px] gap-[40px]">
+      <div className="flex flex-wrap items-center justify-between mt-[40px] gap-[40px] mx-auto w-full">
         {displayedRecommendedCars.map((car) => (
           <CarCard key={car.id} car={car} />
         ))}

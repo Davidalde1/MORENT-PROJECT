@@ -56,7 +56,7 @@ const Payment = () => {
         <div>
           <PaymentMethod/>
         </div>
-        <div>
+        <div className='mb-3'>
           <Confirmation/>
         </div>
       </div>
