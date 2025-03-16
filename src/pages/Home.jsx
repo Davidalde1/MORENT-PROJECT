@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import { Koenigsegg, NissanGT,} from "../assets/assets";
 import CarContainer from "./../components/CarCard/CarContainer";
 import Footer from "../components/Footer";
+import VoiceAssistant from "../components/VoiceAssistant";
 // import Jumbotron from "../components/jumbotron/jumbotron";
 
 const Home = () => {
@@ -20,6 +21,9 @@ const Home = () => {
   return (
     <div className="w-[100%] min-h-screen">
       <main className="lg:px-[4rem] lg:py-[2rem] h-max bg-[#f6f7f9] pt-[2rem] p-[2rem]">
+        <div className="fixed right-4 bottom-8 z-50">
+          <VoiceAssistant/>
+        </div>        
         <div className="lg:m-auto w-full">
           <div className="flex items-center gap-4 md:gap-6 lg:gap-10 px-4 lg:px-4 flex-col lg:flex-row">
             <div className="w-full sm:w-[350px] md:w-full lg:w-full h-auto min-h-[280px] bg-[#54A6FF] rounded-[10px] p-4 lg:p-6">
