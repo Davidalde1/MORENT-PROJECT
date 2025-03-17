@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useCars } from "./Context/CarContext";
 import { useNavigate } from 'react-router-dom';
 
+
 const VoiceAssistant = () => {
   const [listening, setListening] = useState(false);
   const [transcript, setTranscript] = useState('');
@@ -22,7 +23,8 @@ const VoiceAssistant = () => {
           car.carName.toLowerCase().includes(searchTerm.toLowerCase()) ||
           car.carType.toLowerCase().includes(searchTerm.toLowerCase()) ||
           car.price.toString().includes(searchTerm) ||
-          car.transmission.toLowerCase().includes(searchTerm.toLowerCase())
+          car.transmission.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          car.color?.toLowerCase().includes(searchTerm.toLowerCase())
       );
 
       setSearchResults(filteredCars);
@@ -87,9 +89,52 @@ const VoiceAssistant = () => {
   // Process user input
   const handleUserInput = (input) => {
     const lowerInput = input.toLowerCase();
-    setSearchTerm(lowerInput);
     
-    let aiResponse = `I'm searching for "${input}" in our database.`;
+    // Extract relevant information from the sentence
+    const keywords = {
+      carNames: cars.map(car => car.carName.toLowerCase()),
+      carTypes: [...new Set(cars.map(car => car.carType.toLowerCase()))],
+      colors: [...new Set(cars.map(car => car.color?.toLowerCase()).filter(Boolean))],
+      prices: cars.map(car => car.price.toString())
+    };
+
+    let searchTerms = [];
+    
+    // Check for car names
+    keywords.carNames.forEach(name => {
+      if (lowerInput.includes(name)) {
+        searchTerms.push(name);
+      }
+    });
+
+    // Check for car types
+    keywords.carTypes.forEach(type => {
+      if (lowerInput.includes(type)) {
+        searchTerms.push(type);
+      }
+    });
+
+    // Check for colors
+    keywords.colors.forEach(color => {
+      if (lowerInput.includes(color)) {
+        searchTerms.push(color);
+      }
+    });
+
+    // Check for prices
+    keywords.prices.forEach(price => {
+      if (lowerInput.includes(price)) {
+        searchTerms.push(price);
+      }
+    });
+
+    const combinedSearchTerm = searchTerms.join(' ');
+    setSearchTerm(combinedSearchTerm);
+    
+    let aiResponse = searchTerms.length > 0 
+      ? `${searchTerms.join(', ')}. Searching now...`
+      : `I couldn't find any specific car details in your request. Please try again with more specific information.`;
+    
     setResponse(aiResponse);
     speakResponse(aiResponse);
   };
@@ -194,9 +239,6 @@ const VoiceAssistant = () => {
         </div>
       )}
       
-      <div className="mt-3 text-[10px] sm:text-xs text-gray-600">
-        <p>Ask me questions about cars you want to search for.</p>
-      </div>
     </div>  
     );
   };
